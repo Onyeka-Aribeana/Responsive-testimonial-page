@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+$color-star: #f5c044;
+$color-heading: #18181b;
+$color-text: #52525a;
+$color-background: #fafaf9;
+$color-white: #ffffff;
+
+$br-sm: 0.8rem;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: clamp(48%, 1vw, 62.5%);
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  color: $color-text;
+
+  background-color: $color-background;
+  min-height: 100vh;
+  padding: 3.2rem 1.6rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.heading {
+  color: $color-heading;
+
+  &--secondary {
+    font-size: 3.6rem;
+  }
+}
+
+.testimonial {
+  width: min(120rem, 100% - 3.2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.8rem;
+  flex-wrap: wrap;
+  line-height: 1.8;
+
+  &__text-box {
+    flex-grow: 1;
+    flex-basis: 40rem;
+  }
+
+  &__star-circle {
+    font-size: 2.4rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-bottom: 1.2rem;
+    border-radius: 100%;
+    background-color: $color-star;
+    display: grid;
+    place-content: center;
+  }
+
+  &__description {
+    font-size: 2rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &__list {
+    list-style: none;
+    list-style-position: inside;
+    font-size: 1.4rem;
+
+    &-item {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      line-height: 1.6;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+        margin-bottom: -0.5rem;
+        background-image: url("../assets/Done_ring_round_fill.svg");
+        background-size: cover;
+        mask-image: url("../assets/Done_ring_round_fill.svg");
+        mask-size: cover;
+        grid-row: 1 / span 2;
+        align-self: baseline;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
+
+  &__star-box {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  &__review {
+    background-color: $color-white;
+    border-radius: $br-sm;
+    font-size: 1.6rem;
+    padding: 3.2rem 3.6rem;
+    max-width: 36rem;
+
+    &--1 {
+      align-self: flex-end;
+    }
+
+    &--2 {
+      align-self: flex-start;
+    }
+
+    &-box {
+      flex-basis: 40rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.4rem, 4vw, 4.8rem);
+    }
+
+    &-logo {
+      height: 2.8rem;
+
+      &--2 {
+        height: 3.2rem;
+      }
+    }
+
+    &-stars {
+      display: flex;
+      gap: 0.6rem;
+      line-height: 0.8;
+    }
+
+    &-star {
+      height: 2.4rem;
+      display: block;
+    }
+  }
+}
